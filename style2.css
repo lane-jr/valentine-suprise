@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Love+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: #f8c8dc;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden !important;
+}
+
+/* Start Screen Styles */
+#startScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+}
+
+#startScreen h1 {
+  font-family: "Lovers Quarrel";
+  font-size: 48px;
+  color: #ff4f6d;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+#openBtn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  border: none;
+  color: white;
+  padding: 20px 50px;
+  font-size: 24px;
+  font-family: "Lovers Quarrel";
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+#openBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Valentine Screen Styles */
+#valentineScreen {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("IMG_5267.JPG");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+#valentineScreen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+#valentineScreen h1 {
+  font-family: "Lovers Quarrel";
+  font-size: 60px;
+  color: #ff2d55;
+  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+#valentineScreen p {
+  font-size: 28px;
+  color: #ff4f6d;
+  font-family: "Love Light";
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flower Container */
+#flowerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bloom Flower Animation */
+.bloom-flower {
+  position: absolute;
+  bottom: -50px;
+  animation: bloomFloat linear forwards;
+}
+
+@keyframes bloomFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-10vh) rotate(10deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) rotate(-20deg) scale(0.8);
+  }
+}
+
+/* Original Styles */
+.headerText {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Lovers Quarrel";
+}
+
+.image {
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  height: 400px;
+  width: 400px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: #ff4f99;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  padding: 20px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ff71ac;
+  color: white;
+  transition: ease-in-out 0.3s;
+}
+
+.absImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.image1 {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  position: absolute;
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.audio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+}
+
+.yesModel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.model-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.modelText {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Lovers Quarrel";
+}
+
+.modelImg {
+  max-height: 300px;
+  width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.f-aps {
+  position: absolute;
+  bottom: 0;
+  animation: slideUp 1s ease-in-out;
+  right: 0;
+  padding: 20px;
+}
+
+.f-aps img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
