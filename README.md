@@ -1,3 +1,3 @@
 Basic Valentines Day surpise for your partner.
 
-https://github.com/lane-jr/valentine-suprise/deployments/github-pages
+https://lane-jr.github.io/valentine-suprise/
